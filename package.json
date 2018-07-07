@@ -1,0 +1,27 @@
+{
+  "name": "customer-payments",
+  "version": "1.0.0",
+  "description": "Node.js web app to identify top customers using Stripe API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmglennon/customer-payments.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmglennon/customer-payments/issues"
+  },
+  "homepage": "https://github.com/rmglennon/customer-payments#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "stripe": "^6.2.1"
+  }
+}
