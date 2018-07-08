@@ -12,34 +12,43 @@ var stripe = require("stripe")(
 
 function paginateCharges(last_id) {
     // Define request parameters
-    var req_params = { limit: 2 };
+    var req_params = { limit: 5 };
     if (last_id !== null) { req_params['starting_after'] = last_id; }
 
     var allCharges = [];
+    var flattenedAllCharges = [];
 
     // Get events
     stripe.charges.list(
         req_params,
         function (err, charges) {
-            
-            console.log(charges.data);
+
+            // console.log(charges.data);
 
             allCharges.push(charges.data);
 
             // Check for more
             // if (charges.has_more) {
-            //   paginateCharges(charges["data"][charges["data"].length - 1].id);
+            //     paginateCharges(charges["data"][charges["data"].length - 1].id);
             // }
 
-            getCustomerTotal(allCharges);
+            flattenedAllCharges = [].concat(...allCharges);
+            getCustomerTotal(flattenedAllCharges);
+
         })
 }
 
 
-paginateCharges(null);
-
 function getCustomerTotal(charges) {
 
-    console.log("*********************************", charges);
+    charges.forEach(function (element) {
+        console.log(element.customer);
+        console.log(element.amount);
+
+        // totalAmount += totalAmount;
+        // console.log(totalAmount) 
+    });
 
 }
+
+paginateCharges(null);
