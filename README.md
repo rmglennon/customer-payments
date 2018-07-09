@@ -1,10 +1,8 @@
 # Find your top customers
 
-This is a Node.js console app to identify your top customers from [Stripe](https://stripe.com/). It uses the Stripe `charges` method to return a list of previous charges in your account. 
+This is a Node.js console app to identify your top customers from [Stripe](https://stripe.com/). It uses the [Stripe `charges` method](https://stripe.com/docs/api/node#list_charges) to return a list of previous charges in your account. 
 
-The results are sorted based on the customers with the highest charges by dollar amount, and then are displayed as a table with customer IDs, the total number of the customer's charges, and the total amount they have charged.
-
-More information on the API: https://stripe.com/docs/api/node#list_charges
+The results (as an array) are sorted based on the customers with the highest charges by dollar amount, and then are displayed as a table with customer IDs, the total number of the customer's charges, and the total amount they have charged.
 
 ## Set up and installation
 
@@ -13,9 +11,9 @@ These must be installed to access the app:
 - [Node.js](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/get-npm)
 
-You need sign up for a Stripe account and get an API key at https://dashboard.stripe.com/. If you need to populate data in your account, you [enable test data](https://stripe.com/docs/dashboard#navigation).
+You need sign up for a Stripe account and get an API key from https://dashboard.stripe.com/. If you need to populate data in your account, [enable test data](https://stripe.com/docs/dashboard#navigation).
 
-Clone or download this repository, and then create a `.env` file containing the entry `API_KEY=` with your API key from your dashboard. This way, your secret key can remain protected from public view.
+Clone or download this repository, and then create a `.env` file containing the entry `API_KEY=` with your API key from your dashboard. This way, your secret key can remain protected from public view in case you publish this file.
 
 ## Run the app
 
